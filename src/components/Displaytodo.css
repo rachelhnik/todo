@@ -1,0 +1,12 @@
+.checkbox:checked {
+  accent-color: green;
+}
+.checkbox {
+  width: 20px;
+  height: 20px;
+}
+.listdisplay {
+  background-color: aqua;
+  max-width: 360px;
+  margin: auto;
+}
