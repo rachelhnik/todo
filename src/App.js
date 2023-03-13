@@ -2,9 +2,10 @@ import "./App.css";
 import Typebox from "./components/Typebox";
 import DisplayTodo from "./components/DisplayTodo";
 import { useEffect, useState } from "react";
+import FinishedTasks from "./components/finishedTasks/FinishedTasks";
 
 function App() {
-    const [task, setTasks] = useState([]);
+    const [tasks, setTasks] = useState([]);
     useEffect(() => {
         fetchTodo();
     }, []);
@@ -17,8 +18,10 @@ function App() {
 
     return (
         <div className="App">
-            <Typebox task={task} setTasks={setTasks} />
-            <DisplayTodo task={task} setTasks={setTasks} />
+            <Typebox tasks={tasks} setTasks={setTasks} />
+
+            <DisplayTodo tasks={tasks} setTasks={setTasks} />
+            <FinishedTasks tasks={tasks} setTasks={setTasks} />
         </div>
     );
 }

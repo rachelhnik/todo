@@ -1,12 +1,21 @@
 .checkbox:checked {
-  accent-color: green;
+    accent-color: green;
 }
 .checkbox {
-  width: 20px;
-  height: 20px;
+    width: 20px;
+    height: 20px;
 }
 .listdisplay {
-  background-color: aqua;
-  max-width: 360px;
-  margin: auto;
+    background-color: white;
+    width: 100%;
+    max-width: 300px;
+    height: 360px;
+    overflow: auto;
+    margin: auto;
+    margin-top: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.listItem:hover {
+    background-color: rgb(242, 240, 240);
 }

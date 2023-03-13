@@ -1,0 +1,18 @@
+.display {
+    max-width: 300px;
+    margin: auto;
+    margin-top: 10px;
+}
+.navi {
+    border-radius: 10px;
+    background-color: transparent;
+}
+.naviActions:hover {
+    background-color: rgb(245, 242, 242);
+}
+.naviActions {
+    padding: 5px;
+    border-radius: 10px;
+    background-color: white;
+    margin: 0px 5px;
+}

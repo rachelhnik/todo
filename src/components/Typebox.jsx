@@ -3,9 +3,8 @@ import "./Typebox.css";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import { useState } from "react";
-import { v4 as uuid } from "uuid";
 
-export default function Typebox({ task, setTasks }) {
+export default function Typebox({ tasks, setTasks }) {
     const [todo, setTodo] = useState("");
 
     const Addtodo = (e) => {
@@ -15,9 +14,9 @@ export default function Typebox({ task, setTasks }) {
             title: title,
             isCompleted: false,
         };
-        const tasks = [...task, myNewTask];
-        console.log(tasks);
-        setTasks(tasks);
+        const totalTasks = [...tasks, myNewTask];
+
+        setTasks(totalTasks);
         setTodo("");
         fetch("http://localhost:3000/api/tasks", {
             method: "POST",
