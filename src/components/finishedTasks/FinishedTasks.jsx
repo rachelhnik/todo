@@ -2,7 +2,7 @@ import React from "react";
 import "./FinishedTasks.css";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
-import HistoryIcon from "@mui/icons-material/History";
+import config from "../Config";
 import DensitySmallIcon from "@mui/icons-material/DensitySmall";
 
 import DoneOutlineIcon from "@mui/icons-material/DoneOutline";
@@ -10,12 +10,12 @@ import SentimentVeryDissatisfiedIcon from "@mui/icons-material/SentimentVeryDiss
 
 export default function FinishedTasks({ setTasks }) {
     const allTasks = async () => {
-        const response = await fetch("http://localhost:3000/api/tasks");
+        const response = await fetch(`${config.apiBaseUrl}/api/tasks `);
         const data = await response.json();
         setTasks(data.data);
     };
     const showFinishedTasks = async () => {
-        const response = await fetch("http://localhost:3000/api/tasks");
+        const response = await fetch(`${config.apiBaseUrl}/api/tasks `);
         const data = await response.json();
         const tasks = await data.data;
         const tasksDone = tasks.filter((item) => item.isCompleted === true);
@@ -23,7 +23,7 @@ export default function FinishedTasks({ setTasks }) {
     };
 
     const showUnfinishedTasks = async () => {
-        const response = await fetch("http://localhost:3000/api/tasks");
+        const response = await fetch(`${config.apiBaseUrl}/api/tasks `);
         const data = await response.json();
         const tasks = await data.data;
         const tasksLeftToDone = tasks.filter(
